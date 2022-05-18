@@ -16,6 +16,13 @@
         * {
             font-family: Vazir;
         }
+
+        .final-amount {
+            width: 100%;
+            border: 1px solid #6dbee5;
+            font-size: 16px !important;
+            background-color: #ffee76e3 !important;
+        }
     </style>
 </head>
 <body class="bg-light">
@@ -132,7 +139,7 @@
                     </div>
                 </div>
                 <hr class="my-4">
-                <div id="result" class="badge bg-warning text-dark"></div>
+                <div id="result" class="badge bg-warning text-dark final-amount"></div>
                 <hr class="my-4">
                 <button class="w-100 btn btn-primary btn-lg" type="submit" id="submit">محاسبه</button>
             </div>
@@ -172,12 +179,30 @@
             const weight = parseFloat($('#weight').val());
             const result = ((((((constructionFee + profitOfTheSeller) * taxation) / 100) + (constructionFee + profitOfTheSeller)) + price) * weight);
 
-            $('#result').html(result)
+            separateNum(Math.floor(result));
+            // $('#result').html(result)
         });
     });
+
+    function separateNum(value) {
+        let nStr = value + '';
+        nStr = nStr.replace(/\,/g, "");
+        let x = nStr.split('.');
+        let x1 = x[0];
+        let x2 = x.length > 1 ? '.' + x[1] : '';
+        let rgx = /(\d+)(\d{3})/;
+
+        while (rgx.test(x1)) {
+            x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        }
+
+        if (x1 + x2 != 'NaN') {
+            $('#result').html(x1 + x2);
+        }
+    }
 </script>
 <script type="text/javascript">
-  !function(){var i="eNYDcp",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
+    !function(){var i="eNYDcp",a=window,d=document;function g(){var g=d.createElement("script"),s="https://www.goftino.com/widget/"+i,l=localStorage.getItem("goftino_"+i);g.async=!0,g.src=l?s+"?o="+l:s;d.getElementsByTagName("head")[0].appendChild(g);}"complete"===d.readyState?g():a.attachEvent?a.attachEvent("onload",g):a.addEventListener("load",g,!1);}();
 </script>
 </body>
 </html>
