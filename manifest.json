@@ -1,0 +1,16 @@
+{
+  "name": "طلای شما چند؟",
+  "short_name": "قیمت طلا",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f5d002",
+  "theme_color": "#dec121",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/img/gold.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    }
+  ]
+}
