@@ -1,0 +1,30 @@
+{
+  "name": "طلای شما چند؟",
+  "short_name": "قیمت طلا",
+  "description": "محاسبه قیمت طلای خریداری شده توسط شما!",
+  "start_url": ".",
+  "display": "standalone",
+  "scope": "/",
+  "dir": "rtl",
+  "lang": "fa-IR",
+  "background_color": "#f5d002",
+  "theme_color": "#dec121",
+  "orientation": "any",
+  "icons": [
+    {
+      "src": "/assets/img/gold.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "/assets/img/gold-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/img/gold-512.png",
+      "type": "image/png",
+      "sizes": "256x256"
+    }
+  ]
+}
