@@ -1,11 +1,10 @@
 if ("serviceWorker" in navigator) {
-    navigator.serviceWorker
-        .register("/sw.js")
+    navigator.serviceWorker.register("/sw.js")
         .then(reg => {
-            console.log("Service worker registred successfully", reg);
+            // console.log("OK!", reg);
         })
         .catch(err => {
-            console.log("service worker not registred !!", err);
+            // console.log("Error!", err);
         });
 }
 
@@ -21,14 +20,11 @@ const cacheAssets = [
 
 self.addEventListener("install", evt => {
     evt.waitUntil(
-        caches
-            .open(staticCacheName)
-            .then(cache => {
-                console.log("caching assets...");
-                cache.addAll(cacheAssets);
-            })
-            .catch(err => {
-            })
+        caches.open(staticCacheName).then(cache => {
+            cache.addAll(cacheAssets);
+        }).catch(err => {
+
+        })
     );
 });
 
