@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="طلا، محاسبه قیمت طلا، محاسبه قیمت آنلاین طلا، ماشین حساب طلا">
+    <meta name="keywords" content="طلا، محاسبه قیمت طلا، محاسبه قیمت آنلاین طلا، ماشین حساب طلا">
+    <meta name="author" content="https://github.com/IAliReza">
+    <meta name="generator" content="0.2">
+    <title>ماشین حساب طلا- اونس به گرم</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css"/>
+    <link rel="stylesheet" href="assets/css/font-face.css"/>
+    <link rel="icon" sizes="32x32" type="image/png" href="assets/img/gold.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#f5d002">
+    <style>
+        * {
+            font-family: 'Vazirmatn',serif;
+        }
+
+        .final-amount {
+            width: 100%;
+            font-size: 18px !important;
+            background-color: #ffa299 !important;
+            color: #5e8975;
+        }
+
+        a {
+            text-decoration: none;
+            color: #45B8AC;
+        }
+
+        a:hover {
+            color: #000000;
+            border-radius: 5px;
+            border-bottom: 1px #cdb398 solid;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body class="bg-light">
+<div class="container">
+    <main>
+        <div class="row mt-3 1g-5">
+            <div class="col-12">
+                <div class="row g-3 p-2">
+                    <div class="col-12">
+                        <label for="oz" class="form-label">
+                            وزن طلا (به اونس)-هر یک اونس ۲۸.۳۵ گرم است
+                            <i class="bi bi-arrow-down"></i>
+                        </label>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text text-bg-warning">ounces</span>
+                            <input type="text" class="form-control" id="oz" dir="ltr" required>
+                        </div>
+                        <div class="invalid-feedback">
+                            Valid last name is required.
+                        </div>
+                    </div>
+                </div>
+
+                <div id="result" class="badge bg-warning text-dark final-amount"></div>
+                <button class="w-100 btn btn-primary btn-lg mt-4" type="submit" id="submit">محاسبه وزن</button>
+            </div>
+        </div>
+    </main>
+    <footer class="my-5 pt-3 text-muted text-center text-small">
+        <ul class="list-inline">
+            <li class="list-inline-item">
+                <a href="https://AliRezaMohammadiDoost.Ir" target="_blank">تماس‌با ما</a>
+            </li>
+            <li class="list-inline-item">
+                <a href="https://github.com/ialireza/gold-calculator" target="_blank">منبع و توضیحات</a>
+            </li>
+        </ul>
+    </footer>
+</div>
+
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $('#submit').click(function () {
+            $('#result').html(parseFloat($('#oz').val()) * 28.35);
+        });
+    });
+</script>
+<script src="sw.js"></script>
+</body>
+</html>
