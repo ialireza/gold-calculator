@@ -14,6 +14,7 @@ const cacheAssets = [
     "/index.html",
     "/assets/css/bootstrap.rtl.min.css",
     "/assets/css/font-face.css",
+    "/assets/css/custom.css",
     "/assets/js/bootstrap.min.js",
     "/assets/js/jquery-3.6.0.min.js",
 ];
