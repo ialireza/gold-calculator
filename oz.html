@@ -7,83 +7,58 @@
     <meta name="keywords" content="طلا، محاسبه قیمت طلا، محاسبه قیمت آنلاین طلا، ماشین حساب طلا">
     <meta name="author" content="https://github.com/IAliReza">
     <meta name="generator" content="0.2">
-    <title>ماشین حساب طلا- اونس به گرم</title>
+    <title>ماشین حساب طلا</title>
     <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css"/>
+    <link rel="stylesheet" href="assets/css/custom.css"/>
     <link rel="stylesheet" href="assets/css/font-face.css"/>
-    <link rel="icon" sizes="32x32" type="image/png" href="assets/img/gold.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="assets/img/32.png">
     <link rel="manifest" href="manifest.webmanifest">
-    <meta name="theme-color" content="#f5d002">
-    <style>
-        * {
-            font-family: 'Vazirmatn',serif;
-        }
-
-        .final-amount {
-            width: 100%;
-            font-size: 18px !important;
-            background-color: #ffa299 !important;
-            color: #5e8975;
-        }
-
-        a {
-            text-decoration: none;
-            color: #45B8AC;
-        }
-
-        a:hover {
-            color: #000000;
-            border-radius: 5px;
-            border-bottom: 1px #cdb398 solid;
-            padding: 5px;
-        }
-    </style>
+    <meta name="theme-color" content="#cdb398">
 </head>
 <body class="bg-light">
 <div class="container">
-    <main>
-        <div class="row mt-3 1g-5">
+    <div class="row">
+        <div class="col-lg-6 mt-5">
+            <h5>جزئیات کالا</h5>
             <div class="col-12">
-                <div class="row g-3 p-2">
-                    <div class="col-12">
-                        <label for="oz" class="form-label">
-                            وزن طلا (به اونس)-هر یک اونس ۲۸.۳۵ گرم است
-                            <i class="bi bi-arrow-down"></i>
-                        </label>
-                        <div class="input-group mb-3">
-                            <span class="input-group-text text-bg-warning">ounces</span>
-                            <input type="text" class="form-control" id="oz" dir="ltr" required>
-                        </div>
-                        <div class="invalid-feedback">
-                            Valid last name is required.
-                        </div>
-                    </div>
+                <label for="oz" class="form-label">
+                    وزن طلا (به اونس)-هر یک اونس ۲۸.۳۵ گرم است
+                    <i class="bi bi-arrow-down"></i>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form_input" id="oz" dir="ltr" required>
+                    <span class="input-group-text text-bg-warning">ounces</span>
                 </div>
-
-                <div id="result" class="badge bg-warning text-dark final-amount"></div>
-                <button class="w-100 btn btn-primary btn-lg mt-4" type="submit" id="submit">محاسبه وزن</button>
+                <div class="invalid-feedback">
+                    Valid last name is required.
+                </div>
             </div>
         </div>
-    </main>
-    <footer class="my-5 pt-3 text-muted text-center text-small">
-        <ul class="list-inline">
-            <li class="list-inline-item">
-                <a href="https://AliRezaMohammadiDoost.Ir" target="_blank">تماس‌با ما</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="https://github.com/ialireza/gold-calculator" target="_blank">منبع و توضیحات</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="oz.html">اونس</a>
-            </li>
-            <li class="list-inline-item">
-                <a href="mz.html">مظنه</a>
-            </li>
-            <li class="list-inline-item">
-                <i class="bi bi-grid"></i>
-                <a href="index.html">خانه</a>
-            </li>
-        </ul>
-    </footer>
+        <div class="col-lg-6 mt-5">
+            <h5>جزئیات سفارش</h5>
+            <div class="table-responsive text-center">
+                <table class="table table-bordered">
+                    <tbody>
+                    <tr>
+                        <td id="result"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="w-100 btn btn-lg btn-custom" type="submit" id="submit">محاسبه</button>
+        </div>
+    </div>
+    <div class="table-responsive text-center">
+        <table class="table table-bordered">
+            <tr>
+                <td><a href="https://AliRezaMohammadiDoost.Ir" target="_blank">تماس‌با ما</a></td>
+                <td><a href="https://github.com/ialireza/gold-calculator" target="_blank">منبع و توضیحات</a></td>
+                <td><a href="oz.html">اونس</a></td>
+                <td><a href="mz.html">مظنه</a></td>
+                <td><a href="index.html">خانه</a></td>
+            </tr>
+        </table>
+    </div>
 </div>
 
 <script src="assets/js/jquery-3.6.0.min.js"></script>
