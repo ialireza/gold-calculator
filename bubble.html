@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="طلا، محاسبه قیمت طلا، محاسبه قیمت آنلاین طلا، ماشین حساب طلا">
+    <meta name="keywords" content="طلا، محاسبه قیمت طلا، محاسبه قیمت آنلاین طلا، ماشین حساب طلا">
+    <meta name="author" content="https://github.com/IAliReza">
+    <meta name="generator" content="0.2">
+    <title>ماشین حساب طلا</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.rtl.min.css"/>
+    <link rel="stylesheet" href="assets/css/custom.css"/>
+    <link rel="stylesheet" href="assets/css/font-face.css"/>
+    <link rel="icon" sizes="32x32" type="image/png" href="assets/img/32.png">
+    <link rel="manifest" href="manifest.webmanifest">
+    <meta name="theme-color" content="#cdb398">
+</head>
+<body class="bg-light">
+<div class="container">
+
+</div>
+<script src="assets/js/jquery-3.6.0.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $.ajax({
+            type: 'GET',
+            url: 'https://api.gold-api.com/price/XAU',
+            cache: false,
+            success: function (result) {
+                console.log(result);
+            }
+        });
+    });
+</script>
+<script src="sw.js"></script>
+</body>
+</html>
