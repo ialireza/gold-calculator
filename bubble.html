@@ -17,19 +17,173 @@
 </head>
 <body class="bg-light">
 <div class="container">
-
+    <div class="row">
+        <div class="col-lg-6 mt-5">
+            <h5>جزئیات کالا</h5>
+            <div class="col-12">
+                <label for="dollar" class="form-label">
+                    قیمت دلار آزاد
+                    <i class="bi bi-arrow-down"></i>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form_input" id="dollar" dir="ltr" required>
+                    <span class="input-group-text text-bg-warning">قیمت دلار</span>
+                </div>
+                <div class="invalid-feedback">
+                    Valid last name is required.
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="ounce" class="form-label">
+                    قیمت اونس جهانی طلا
+                    <i class="bi bi-arrow-down"></i>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form_input" id="ounce" dir="ltr" required>
+                    <span class="input-group-text text-bg-warning">قیمت انس</span>
+                </div>
+                <div class="invalid-feedback">
+                    Valid last name is required.
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="multiplication-cost" class="form-label">
+                    حق ضرب سکه
+                    <i class="bi bi-arrow-down"></i>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form_input" id="multiplication-cost" dir="ltr" required
+                           value="7000">
+                    <span class="input-group-text text-bg-warning">حق ضرب سکه</span>
+                </div>
+                <div class="invalid-feedback">
+                    Valid last name is required.
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="whole-coin" class="form-label">
+                    قیمت سکه تمام
+                    <i class="bi bi-arrow-down"></i>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form_input" id="whole-coin" dir="ltr" required
+                           value="0">
+                    <span class="input-group-text text-bg-warning">قیمت سکه تمام</span>
+                </div>
+                <div class="invalid-feedback">
+                    Valid last name is required.
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="half-coin" class="form-label">
+                    قیمت نیم سکه
+                    <i class="bi bi-arrow-down"></i>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form_input" id="half-coin" dir="ltr" required
+                           value="0">
+                    <span class="input-group-text text-bg-warning">قیمت نیم سکه</span>
+                </div>
+                <div class="invalid-feedback">
+                    Valid last name is required.
+                </div>
+            </div>
+            <div class="col-12">
+                <label for="quarter-coin" class="form-label">
+                    قیمت ربع سکه
+                    <i class="bi bi-arrow-down"></i>
+                </label>
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control form_input" id="quarter-coin" dir="ltr" required
+                           value="0">
+                    <span class="input-group-text text-bg-warning">قیمت ربع سکه</span>
+                </div>
+                <div class="invalid-feedback">
+                    Valid last name is required.
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 mt-5">
+            <h5>جزئیات سفارش</h5>
+            <div class="table-responsive text-center">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <td>حباب</td>
+                        <td>ارزش ذاتی</td>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td id="wholeCoin"></td>
+                        <td id="wholeCoin1"></td>
+                    </tr>
+                    <tr>
+                        <td id="halfCoin"></td>
+                        <td id="halfCoin1"></td>
+                    </tr>
+                    <tr>
+                        <td id="quarterCoin"></td>
+                        <td id="quarterCoin1"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <button class="w-100 btn btn-lg btn-custom" type="submit" id="submit">محاسبه</button>
+        </div>
+    </div>
+    <div class="table-responsive text-center">
+        <table class="table table-bordered">
+            <tr>
+                <td><a href="https://AliRezaMohammadiDoost.Ir" target="_blank">تماس‌با ما</a></td>
+                <td><a href="https://github.com/ialireza/gold-calculator" target="_blank">منبع و توضیحات</a></td>
+                <td><a href="oz.html">اونس</a></td>
+                <td><a href="mz.html">مظنه</a></td>
+                <td><a href="index.html">خانه</a></td>
+            </tr>
+        </table>
+    </div>
 </div>
+
 <script src="assets/js/jquery-3.6.0.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
 <script>
     $(function () {
+        let ounce = 0;
+
         $.ajax({
             type: 'GET',
             url: 'https://api.gold-api.com/price/XAU',
-            cache: false,
             success: function (result) {
-                console.log(result);
+                ounce = result.price;
+                $('#ounce').val(ounce);
             }
+        });
+
+        $('#submit').click(function () {
+            const dollar = parseInt($('#dollar').val());
+            //const ounce = parseFloat($('#ounce').val());
+
+            const multiplicationCost = parseInt($('#multiplication-cost').val());
+            let wholeCoin = parseInt($('#whole-coin').val());
+            let halfCoin = parseInt($('#half-coin').val());
+            let quarterCoin = parseInt($('#quarter-coin').val());
+
+            //حق ضرب + (۳۱/۱ ÷ (۰/۹ × قیمت اونس جهانی طلا × نرخ دلار × وزن سکه)) = ارزش ذاتی سکه
+            const intrinsicValueWholeCoin = ((8.133 * dollar * ounce * 0.9) / 31.1) + multiplicationCost;
+            const intrinsicValueHalfCoin = ((4.066 * dollar * ounce * 0.9) / 31.1) + multiplicationCost;
+            const intrinsicValueQuarterCoin = ((2.033 * dollar * ounce * 0.9) / 31.1) + multiplicationCost;
+
+            //حباب سکه = ارزش ذاتی سکه – قیمت روز سکه
+
+            $('#wholeCoin').html(parseInt(wholeCoin - intrinsicValueWholeCoin));
+            $('#wholeCoin1').html(parseInt(wholeCoin - (wholeCoin - intrinsicValueWholeCoin)));
+
+            $('#halfCoin').html(parseInt(halfCoin - intrinsicValueHalfCoin));
+            $('#halfCoin1').html(parseInt(halfCoin - (halfCoin - intrinsicValueHalfCoin)));
+
+            $('#quarterCoin').html(parseInt(quarterCoin - intrinsicValueQuarterCoin));
+            $('#quarterCoin1').html(parseInt(quarterCoin - (quarterCoin - intrinsicValueQuarterCoin)));
         });
     });
 </script>
