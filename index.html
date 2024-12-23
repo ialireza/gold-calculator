@@ -17,6 +17,39 @@
 </head>
 <body class="bg-light">
 <div class="container">
+    <header class="py-3 mb-3 border-bottom">
+        <div class="container-fluid d-grid gap-3 align-items-center" style="grid-template-columns: 1fr 2fr;">
+            <div class="dropdown">
+                <a href="#"
+                   class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-body-emphasis text-decoration-none dropdown-toggle"
+                   data-bs-toggle="dropdown" aria-expanded="false">
+                    منو
+                </a>
+                <ul class="dropdown-menu text-small shadow" style="">
+                    <li>
+                        <a class="dropdown-item" href="index.html">خانه</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="mz.html">مظنه</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="oz.html">اونس</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="bubble.html">حباب</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="https://AliRezaMohammadiDoost.Ir" target="_blank">تماس‌با ما</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" href="https://github.com/ialireza/gold-calculator" target="_blank">
+                            منبع و توضیحات
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
     <div class="row">
         <div class="col-lg-6 mt-5">
             <h5>جزئیات کالا</h5>
@@ -141,22 +174,10 @@
             <button class="w-100 btn btn-lg btn-custom" type="submit" id="submit">محاسبه قیمت</button>
         </div>
     </div>
-    <div class="table-responsive text-center">
-        <table class="table table-bordered">
-            <tr>
-                <td><a href="https://AliRezaMohammadiDoost.Ir" target="_blank">تماس‌با ما</a></td>
-                <td><a href="https://github.com/ialireza/gold-calculator" target="_blank">منبع و توضیحات</a></td>
-                <td><a href="bubble.html">حباب</a></td>
-                <td><a href="oz.html">اونس</a></td>
-                <td><a href="mz.html">مظنه</a></td>
-                <td><a href="index.html">خانه</a></td>
-            </tr>
-        </table>
-    </div>
 </div>
 
 <script src="assets/js/jquery-3.6.0.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/bootstrap.bundle.min.js"></script>
 <script>
     $(function () {
         $('#submit').click(function () {
